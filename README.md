@@ -10,7 +10,7 @@ Method:
 Results:
 - Error decreases by roughly sqrt(1/n)
 Monte Carlo estimation of pi using 200,000 samples.
-![Pi Simulation](pi_plot.png)
+![Pi Simulation](pi_approximation.png)
 
 Features:
 - Batch processing for performance
