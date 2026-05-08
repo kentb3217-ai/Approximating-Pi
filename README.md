@@ -1,6 +1,6 @@
 Monto Carlo Pi Simulation
 
-Description: Approximate pi using random sampling inside a 1x1 square
+Description: Approximate pi by randomly choosing n points inside a 1x1 square
 
 Method:
 - Generate (x,y) points
