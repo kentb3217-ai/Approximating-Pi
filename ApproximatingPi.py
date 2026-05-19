@@ -7,7 +7,7 @@ iterations = range(100000) # number of batches
 
 # for plotting
 k = 20
-x_in, y_in, x_out, y_out = list(), list(), list(), list(),
+x_in, y_in, x_out, y_out = np.array([]), np.array([]), np.array([]), np.array([])
 
 # compute in batches and add to r_tot
 for i in iterations:
@@ -17,14 +17,15 @@ for i in iterations:
     distance = x_values**2 + y_values**2
     less_than_one = distance < 1
 
-    r = np.sum(less_than_one)
-    r_tot += r
     # for plotting first k batches
     if i < k:
-        x_in.extend(x_values[less_than_one])
-        y_in.extend(y_values[less_than_one])
-        x_out.extend(x_values[~less_than_one])
-        y_out.extend(y_values[~less_than_one])
+        x_in = np.append(x_in, x_values[less_than_one])
+        y_in = np.append(y_in, y_values[less_than_one])
+        x_out = np.append(x_out, x_values[~less_than_one])
+        y_out = np.append(y_out, y_values[~less_than_one])
+    
+    r = np.sum(less_than_one)
+    r_tot += r
 
 total_points = n * len(iterations)
 
